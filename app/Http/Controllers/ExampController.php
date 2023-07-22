@@ -155,11 +155,10 @@ class ExampController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy($ids)
     {
-
         try {
-            $this->exampService->destroy($id);
+            $this->exampService->destroy([$ids]);
             return response()->json(
                 [
                     'status' => true,

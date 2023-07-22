@@ -47,12 +47,12 @@ class ExampleService
 
 
     //deltete 
-    function destroy  ($id) {
-        $examp = Examp::find($id);
+    function destroy  ($ids =[]) {
+        $examp = Examp::destroy($ids);
         if (!$examp) {
             throw new \Exception('not found examp');
         }
-        $examp->delete();
+        
         return $examp;
     }
 
